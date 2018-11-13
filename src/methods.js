@@ -596,7 +596,21 @@ export default {
         named: params => set(params, 'privkeys', map(params.privkeys || [], () => '******'))
       }
     },
-    version: '>=0.7.0'
+    version: '>=0.7.0 <0.18.0'
+  },
+  signRawTransactionWithKey: {
+    category: 'rawtransactions',
+    obfuscate: {
+      request: {
+        default: params => set([...params], '[1]', map(params[1], () => '******')),
+        named: params => set(params, 'privkeys', map(params.privkeys || [], () => '******'))
+      }
+    },
+    version: '>=0.17.0'
+  },
+  signRawTransactionWithWallet: {
+    category: 'rawtransactions',
+    version: '>=0.17.0'
   },
   stop: {
     category: 'control',
