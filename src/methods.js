@@ -596,7 +596,7 @@ export default {
         named: params => set(params, 'privkeys', map(params.privkeys || [], () => '******'))
       }
     },
-    version: '>=0.7.0 <0.18.0'
+    version: '>=0.7.0'
   },
   signRawTransactionWithKey: {
     category: 'rawtransactions',
