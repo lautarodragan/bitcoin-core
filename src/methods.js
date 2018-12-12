@@ -610,6 +610,9 @@ export default {
   },
   signRawTransactionWithWallet: {
     category: 'rawtransactions',
+    features: {
+      multiwallet: '>=0.17.0'
+    },
     version: '>=0.17.0'
   },
   stop: {
