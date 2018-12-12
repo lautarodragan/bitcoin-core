@@ -104,8 +104,8 @@ describe('RequestObfuscator', () => {
     it('should obfuscate all private keys from `request.body` when `method` is `signrawtransactionwithkey` and RPC is called with named parameters', () => {
       const request = { body: `{"id":"1485369469422","method":"signrawtransactionwithkey","params":${JSON.stringify({
         hexstring: 'foo',
-        privkeys: ['foo', 'bar'],
         prevtxs: [],
+        privkeys: ['foo', 'bar'],
         sighashtype: 'bar'
       })}}`, type: 'request' };
 
@@ -113,8 +113,8 @@ describe('RequestObfuscator', () => {
 
       request.body.should.eql(`{"id":"1485369469422","method":"signrawtransactionwithkey","params":${JSON.stringify({
         hexstring: 'foo',
-        privkeys: ['******', '******'],
         prevtxs: [],
+        privkeys: ['******', '******'],
         sighashtype: 'bar'
       })}}`);
     });
