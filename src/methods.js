@@ -137,6 +137,9 @@ export default {
   },
   fundRawTransaction: {
     category: 'rawtransactions',
+    features: {
+      multiwallet: '>=0.15.0'
+    },
     version: '>=0.12.0'
   },
   generate: {
