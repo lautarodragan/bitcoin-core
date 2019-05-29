@@ -1,23 +1,23 @@
-# bitcoin-core
+# bitcoins
 A modern Bitcoin Core REST and RPC client to execute administrative tasks, [multiwallet](https://bitcoincore.org/en/2017/09/01/release-0.15.0/#multiwallet) operations and queries about network and the blockchain.
 
 ## Status
-[![npm version][npm-image]][npm-url] [![build status][travis-image]][travis-url]
+[![npm version][npm-image]][npm-url]
 
 ## Installation
-
-Install the package via `yarn`:
-
-```sh
-yarn add bitcoin-core
-```
-
-or via `npm`:
 
 Install the package via `npm`:
 
 ```sh
-npm install bitcoin-core --save
+npm i -E bitcoins
+```
+
+or via `yarn`:
+
+Install the package via `npm`:
+
+```sh
+yarn add bitcoins
 ```
 
 ## Usage
@@ -43,7 +43,7 @@ npm install bitcoin-core --save
 The `network` will automatically determine the port to connect to, just like the `bitcoind` and `bitcoin-cli` commands.
 
 ```js
-const Client = require('bitcoin-core');
+const Client = require('bitcoins');
 const client = new Client({ network: 'regtest' });
 ```
 
@@ -155,7 +155,7 @@ Notice the `rpcauth` hash which has been previously generated for the password `
 Instantiate a client for each wallet and execute commands targeted at each wallet:
 
 ```js
-const Client = require('bitcoin-core');
+const Client = require('bitcoins');
 
 const wallet1 = new Client({
   network: 'regtest',
@@ -439,7 +439,7 @@ stunnel -d 28332 -r 127.0.0.1:18332 -p stunnel.pem -P ''
 Then pass the public certificate to the client:
 
 ```js
-const Client = require('bitcoin-core');
+const Client = require('bitcoins');
 const fs = require('fs');
 const client = new Client({
   agentOptions: {
@@ -452,7 +452,7 @@ const client = new Client({
 
 ## Logging
 
-By default, all requests made with `bitcoin-core` are logged using [uphold/debugnyan](https://github.com/uphold/debugnyan) with `bitcoin-core` as the logging namespace.
+By default, all requests made with `bitcoins` are logged using [uphold/debugnyan](https://github.com/uphold/debugnyan) with `bitcoin-core` as the logging namespace.
 
 Please note that all sensitive data is obfuscated before calling the logger.
 
@@ -515,7 +515,5 @@ npm version [<newversion> | major | minor | patch] -m "Release %s"
 ## License
 MIT
 
-[npm-image]: https://img.shields.io/npm/v/bitcoin-core.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/bitcoin-core
-[travis-image]: https://img.shields.io/travis/ruimarinho/bitcoin-core.svg?style=flat-square
-[travis-url]: https://travis-ci.org/ruimarinho/bitcoin-core
+[npm-image]: https://img.shields.io/npm/v/bitcoins.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/bitcoins
